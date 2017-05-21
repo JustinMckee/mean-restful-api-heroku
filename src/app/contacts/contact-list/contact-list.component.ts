@@ -6,7 +6,8 @@ import { ContactDetailsComponent } from '../contact-details/contact-details.comp
 @Component({
   selector: 'contact-list',
   templateUrl: './contact-list.component.html',
-  styleUrls: ['./contact-list.component.css']
+  styleUrls: ['./contact-list.component.css'],
+  providers: [ContactService]
 })
 export class ContactListComponent implements OnInit {
   contacts: Contact[]
