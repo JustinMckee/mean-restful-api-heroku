@@ -1,28 +1,54 @@
 # MeanContactlist
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
+An angular-cli, MEAN RESTful API for Heroku
 
-## Development server
+# package.json changes for NodeJS
+
+Changed from DevDependencies to Dependencies:
+
+@angular/cli
+@angular/compiler
+@angular/compiler-cli
+
+
+Other changes:
+
+"scripts": {
+  ...
+  "start": "node server.js",
+  ...
+  "postinstall": "ng build --aot -prod"
+}
+
+These should match your local node and npm version:
+
+"engines": {
+  "node": "7.4.0",
+  "npm": "4.0.5"
+}
+
+## MEAN RESTful API
+
+This project uses examples from the tutorial "Create a Web App and RESTful API Server Using the MEAN Stack." Follow along by visiting https://devcenter.heroku.com/articles/mean-apps-restful-api
+
+## Heroku
+
+You should have an Heroku account and Heroku CLI installed.
+
+Step 1: Create a git remote
+$ heroku create
+
+Step 2: Provision MongoDB
+$ heroku addons:create mongolab
+
+The database connection URI is stored as a config var in Heroku Dashboard > Settings
+
+## Development server (Local)
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
+## Build (Local)
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To view the tutorial where this app originated, check out
